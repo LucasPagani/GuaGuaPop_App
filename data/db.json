@@ -1,0 +1,64 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Collar Antipulgas",
+      "descripcion": "Collar resistente al agua que protege contra pulgas y garrapatas por hasta 8 meses.",
+      "tipo_animal": "Perro"
+    },
+    {
+      "id": 2,
+      "nombre": "Rascador de Cartón",
+      "descripcion": "Rascador para gatos hecho de cartón reciclado, ideal para afilar sus garras.",
+      "tipo_animal": "Gato"
+    },
+    {
+      "id": 3,
+      "nombre": "Jaula para Hámster",
+      "descripcion": "Jaula espaciosa con túneles y rueda para hámsters activos.",
+      "tipo_animal": "Hámster"
+    },
+    {
+      "id": 4,
+      "nombre": "Comida para Peces Tropicales",
+      "descripcion": "Mezcla de alimentos premium con alto contenido de proteínas para peces tropicales.",
+      "tipo_animal": "Pez"
+    },
+    {
+      "id": 5,
+      "nombre": "Ropa Impermeable",
+      "descripcion": "Capa impermeable para perros pequeños, ideal para días lluviosos.",
+      "tipo_animal": "Perro"
+    },
+    {
+      "id": 6,
+      "nombre": "Cama Suave para Gato",
+      "descripcion": "Cama acolchonada para gatos, con revestimiento suave y antideslizante.",
+      "tipo_animal": "Gato"
+    },
+    {
+      "id": 7,
+      "nombre": "Juguete Mordedor",
+      "descripcion": "Mordedor de goma duradero, perfecto para cachorros en fase de dentición.",
+      "tipo_animal": "Perro"
+    },
+    {
+      "id": 8,
+      "nombre": "Transportadora de Viaje",
+      "descripcion": "Transportadora rígida para gatos y perros pequeños, con ventilación y fácil de limpiar.",
+      "tipo_animal": "Gato"
+    },
+    {
+      "id": 9,
+      "nombre": "Alimento para Conejo",
+      "descripcion": "Mezcla balanceada de heno y pellets nutritivos para conejos.",
+      "tipo_animal": "Conejo"
+    },
+    {
+      "id": 10,
+      "nombre": "Filtro para Acuario",
+      "descripcion": "Filtro de carbón activado para acuarios de hasta 100 litros.",
+      "tipo_animal": "Pez"
+    }
+  ]
+}
