@@ -1,9 +1,5 @@
-footer {
-  background-color: #333;
-  color: white;
+.footer-toolbar{
+  background-color:  #3ab1c6;
   text-align: center;
-  padding: 1rem;
-
-  bottom: 0;
 
 }

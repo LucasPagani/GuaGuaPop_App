@@ -1,28 +1,33 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map, Observable } from 'rxjs';
+import { environments } from '../../environments/environments.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  private items = [
-    { id: 1, name: 'Producto 1', tipo: 'producto' },
-    { id: 2, name: 'Producto 2', tipo: 'producto' },
-    { id: 3, name: 'Servicio 1', tipo: 'servicio' },
-    { id: 4, name: 'Servicio 2', tipo: 'servicio' }
-  ];
+  private baseUrl: string = environments.baseUrl;  // Usa la URL del entorno
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getItems(): any[] {
-    return this.items;
+  // Obtén todos los elementos desde el archivo JSON
+  getItems(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/items.json`);  // Cambia la URL si es necesario
   }
 
-  getProductos(): any[] {
-    return this.items.filter(item => item.tipo === 'producto');
+  // Obtén solo productos
+  getProductos(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/items.json`).pipe(
+      map(items => items.filter(item => item.tipo === 'producto'))
+    );
   }
 
-  getServicios(): any[] {
-    return this.items.filter(item => item.tipo === 'servicio');
+  // Obtén solo servicios
+  getServicios(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/items.json`).pipe(
+      map(items => items.filter(item => item.tipo === 'servicio'))
+    );
   }
 }

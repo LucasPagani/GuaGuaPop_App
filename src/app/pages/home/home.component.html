@@ -1,5 +1,11 @@
 <h1>Todos los Productos y Servicios</h1>
-<ul>
+
+<!-- Mostrar un mensaje mientras se cargan los datos -->
+<div *ngIf="items.length === 0">
+  Cargando productos y servicios...
+</div>
+
+<ul *ngIf="items.length > 0">
   <li *ngFor="let item of items">
     {{ item.name }} ({{ item.tipo }})
   </li>
