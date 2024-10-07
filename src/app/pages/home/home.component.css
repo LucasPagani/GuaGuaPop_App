@@ -1,0 +1,22 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Espacio entre los elementos */
+}
+
+.grid > div {
+  flex: 1 1 calc(20% - 16px); /* 20% del ancho (5 elementos por fila), ajustado por el espacio (gap) */
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .grid > div {
+    flex: 1 1 calc(50% - 16px); /* Para pantallas medianas, mostrar 2 elementos por fila */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid > div {
+    flex: 1 1 calc(100% - 16px); /* Para pantallas pequeñas, mostrar 1 elemento por fila */
+  }
+}

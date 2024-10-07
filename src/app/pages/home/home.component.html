@@ -1,6 +1,14 @@
 <h1>Todos los Productos y Servicios</h1>
-<ul>
-  <li *ngFor="let item of items">
-    {{ item.name }} ({{ item.tipo }})
-  </li>
-</ul>
+
+<mat-divider></mat-divider>
+
+<div class="grid bm-8 pt-2">
+
+
+  <div *ngFor="let item of producto"
+  class="col-12 col-md-2 col-lg-2">
+  <app-card [productos]="item"></app-card>
+</div>
+
+
+</div>

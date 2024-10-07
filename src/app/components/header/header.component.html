@@ -1,17 +1,38 @@
 <header>
-  <nav>
-    <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/about">About</a></li>
-      <li><a routerLink="/productos">Productos</a></li>
-      <li><a routerLink="/servicios">Servicios</a></li>
-    </ul>
+  <!-- Barra superior: Logo y botones de acciones (Login y Registrar) -->
+  <mat-toolbar color="primary" class="top-bar">
 
-    <button mat-button>
-      LogIn
-    </button>
+    <span>GuaGuaPop</span>
+
+    <span class="spacer"></span>
+
+
     <button mat-button>
       Registrar
     </button>
-  </nav>
+    <button mat-button>
+      LogIn
+    </button>
+  </mat-toolbar>
+
+  <!-- Barra inferior: Menú de navegación -->
+  <mat-toolbar color="accent" class="nav-bar">
+
+    <button mat-button [matMenuTriggerFor]="servicesMenu">Todos Servicios</button>
+
+    <!-- Botón desplegable de Servicios -->
+    <mat-menu #servicesMenu="matMenu">
+      <button mat-menu-item routerLink="">Perro</button>
+      <button mat-menu-item routerLink="">Gato</button>
+      <button mat-menu-item routerLink="">Aves</button>
+      <button mat-menu-item routerLink="">Reptiles</button>
+      <button mat-menu-item routerLink="">Animales Exoticos</button>
+      <button mat-menu-item routerLink="">Otos animales</button>
+    </mat-menu>
+
+    <button mat-button routerLink="/productos">Productos</button>
+    <button mat-button routerLink="/productos">Servicios</button>
+    <button mat-button routerLink="/about">Acerca de Nosotros</button>
+    <button mat-button routerLink="/contact">Contáctanos</button>
+  </mat-toolbar>
 </header>

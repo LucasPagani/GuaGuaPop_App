@@ -1,25 +1,20 @@
-
-header {
-  background-color: #3ab1c6;
-  color: white;
-  padding: 1rem;
+.spacer {
+  flex: 1 1 auto;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
+.top-bar {
+  height: 64px; /* Ajusta el alto de la barra superior */
 }
 
-nav ul li {
-  display: inline;
+.nav-bar {
+  justify-content: left; /* Centra los botones del menú de navegación */
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
+mat-toolbar {
+  padding: 0 16px; /* Ajusta el espaciado interno del toolbar */
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+button[mat-button] {
+  margin: 0 10px; /* Espaciado entre los botones del menú */
+  font-size: 16px; /* Ajusta el tamaño de la fuente en los botones */
 }

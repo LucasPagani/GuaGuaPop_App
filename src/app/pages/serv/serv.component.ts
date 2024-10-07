@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class ServComponent {
   servicios: any[] = [];
 
-  constructor(private dataService: DataService) {
-    this.servicios = this.dataService.getServicios();  // Obtener solo servicios
+  constructor() {
+
   }
 }
