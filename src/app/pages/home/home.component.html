@@ -1,12 +1,12 @@
 <h1>Todos los Productos y Servicios</h1>
 
-<!-- Mostrar un mensaje mientras se cargan los datos -->
-<div *ngIf="items.length === 0">
-  Cargando productos y servicios...
+<mat-divider></mat-divider>
+
+<div class="grid bm-8 pt-2">
+  <div *ngFor="let producto of prod"
+        class="col-12 sm:col-4 md:col-3 xl:col-2">
+    <productos-prod-card [prod]="producto"></productos-prod-card>  <!-- Componente Card -->
+  </div>
 </div>
 
-<ul *ngIf="items.length > 0">
-  <li *ngFor="let item of items">
-    {{ item.name }} ({{ item.tipo }})
-  </li>
-</ul>
+

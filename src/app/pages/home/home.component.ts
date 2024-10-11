@@ -1,29 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { CommonModule } from '@angular/common';
+import { Anuncio } from '../../interfaces/anuncio.interfaces';
+import { CardComponent } from '../../components/card/card.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardComponent, MatCardModule, MatDividerModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']  // Corregir a `styleUrls` con "s"
+  styleUrls: ['./home.component.css'],
+  providers: [DataService],
 })
-export class HomeComponent implements OnInit {
-  items: any[] = [];
+export class HomeComponent {
+  public prod: Anuncio[] = [];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {}
 
-  // Implementar OnInit para cargar los datos cuando el componente se inicialice
   ngOnInit(): void {
-    // Suscribirse al observable para obtener los datos
-    this.dataService.getItems().subscribe({
-      next: (data) => {
-        this.items = data;  // Asignar los datos recibidos a la variable items
+    this.dataService.getAnuncios().subscribe(
+      (prod) => {
+        console.log('Datos recibidos:', prod); // Para verificar la llegada de datos
+        this.prod = prod;
       },
-      error: (error) => {
-        console.error('Error al cargar los items', error);  // Manejo básico de errores
-      }
-    });
+      (error) => console.error('Error en la carga de datos:', error)
+    );
   }
+
+  //  ngOnInit(): void {
+  //      this.dataService.getAnuncios().
+  //      subscribe(prod => this.prod = prod);
+  //  }
 }

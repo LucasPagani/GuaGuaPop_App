@@ -1,64 +1,184 @@
 {
-  "productos": [
+  "anuncios": [
     {
       "id": 1,
       "nombre": "Collar Antipulgas",
       "descripcion": "Collar resistente al agua que protege contra pulgas y garrapatas por hasta 8 meses.",
-      "tipo_animal": "Perro"
+      "tipo_animal": "Perro",
+      "tipo_anuncio": "Producto",
+      "precio": 25.99,
+      "img": "https://example.com/collar-antipulgas.jpg"
     },
     {
       "id": 2,
       "nombre": "Rascador de Cartón",
       "descripcion": "Rascador para gatos hecho de cartón reciclado, ideal para afilar sus garras.",
-      "tipo_animal": "Gato"
+      "tipo_animal": "Gato",
+      "tipo_anuncio": "Producto",
+      "precio": 12.50,
+      "img": "https://example.com/rascador-carton.jpg"
     },
     {
       "id": 3,
       "nombre": "Jaula para Hámster",
       "descripcion": "Jaula espaciosa con túneles y rueda para hámsters activos.",
-      "tipo_animal": "Hámster"
+      "tipo_animal": "Hámster",
+      "tipo_anuncio": "Producto",
+      "precio": 35.75,
+      "img": "https://example.com/jaula-hamster.jpg"
     },
     {
       "id": 4,
       "nombre": "Comida para Peces Tropicales",
       "descripcion": "Mezcla de alimentos premium con alto contenido de proteínas para peces tropicales.",
-      "tipo_animal": "Pez"
+      "tipo_animal": "Pez",
+      "tipo_anuncio": "Producto",
+      "precio": 9.99,
+      "img": "https://example.com/comida-peces.jpg"
     },
     {
       "id": 5,
       "nombre": "Ropa Impermeable",
       "descripcion": "Capa impermeable para perros pequeños, ideal para días lluviosos.",
-      "tipo_animal": "Perro"
+      "tipo_animal": "Perro",
+      "tipo_anuncio": "Producto",
+      "precio": 18.30,
+      "img": "https://example.com/ropa-impermeable.jpg"
     },
     {
       "id": 6,
       "nombre": "Cama Suave para Gato",
       "descripcion": "Cama acolchonada para gatos, con revestimiento suave y antideslizante.",
-      "tipo_animal": "Gato"
+      "tipo_animal": "Gato",
+      "tipo_anuncio": "Producto",
+      "precio": 22.15,
+      "img": "https://example.com/cama-gato.jpg"
     },
     {
       "id": 7,
       "nombre": "Juguete Mordedor",
       "descripcion": "Mordedor de goma duradero, perfecto para cachorros en fase de dentición.",
-      "tipo_animal": "Perro"
+      "tipo_animal": "Perro",
+      "tipo_anuncio": "Producto",
+      "precio": 8.99,
+      "img": "https://example.com/juguete-mordedor.jpg"
     },
     {
       "id": 8,
       "nombre": "Transportadora de Viaje",
       "descripcion": "Transportadora rígida para gatos y perros pequeños, con ventilación y fácil de limpiar.",
-      "tipo_animal": "Gato"
+      "tipo_animal": "Gato",
+      "tipo_anuncio": "Producto",
+      "precio": 40.60,
+      "img": "https://example.com/transportadora-viaje.jpg"
     },
     {
       "id": 9,
       "nombre": "Alimento para Conejo",
       "descripcion": "Mezcla balanceada de heno y pellets nutritivos para conejos.",
-      "tipo_animal": "Conejo"
+      "tipo_animal": "Conejo",
+      "tipo_anuncio": "Producto",
+      "precio": 14.80,
+      "img": "https://example.com/alimento-conejo.jpg"
     },
     {
       "id": 10,
       "nombre": "Filtro para Acuario",
       "descripcion": "Filtro de carbón activado para acuarios de hasta 100 litros.",
-      "tipo_animal": "Pez"
+      "tipo_animal": "Pez",
+      "tipo_anuncio": "Producto",
+      "precio": 25.00,
+      "img": "https://example.com/filtro-acuario.jpg"
+    },
+    {
+      "id": 11,
+      "nombre": "Paseo de Perros",
+      "descripcion": "Servicio de paseo para perros con duración de 1 hora, incluye recogida y devolución a domicilio.",
+      "tipo_animal": "Perro",
+      "tipo_anuncio": "Servicio",
+      "precio": 15.00,
+      "img": "https://example.com/paseo-perros.jpg"
+    },
+    {
+      "id": 12,
+      "nombre": "Peluquería Canina",
+      "descripcion": "Baño, corte de pelo y limpieza de oídos para perros de todas las razas.",
+      "tipo_animal": "Perro",
+      "tipo_anuncio": "Servicio",
+      "precio": 35.00,
+      "img": "https://example.com/peluqueria-canina.jpg"
+    },
+    {
+      "id": 13,
+      "nombre": "Entrenamiento para Gatos",
+      "descripcion": "Clases personalizadas para corregir comportamientos no deseados en gatos.",
+      "tipo_animal": "Gato",
+      "tipo_anuncio": "Servicio",
+      "precio": 50.00,
+      "img": "https://example.com/entrenamiento-gatos.jpg"
+    },
+    {
+      "id": 14,
+      "nombre": "Cuidado a Domicilio para Conejos",
+      "descripcion": "Cuidado especializado para conejos a domicilio, incluye alimentación y limpieza de jaula.",
+      "tipo_animal": "Conejo",
+      "tipo_anuncio": "Servicio",
+      "precio": 20.00,
+      "img": "https://example.com/cuidado-conejos.jpg"
+    },
+    {
+      "id": 15,
+      "nombre": "Terapia Acuática para Perros",
+      "descripcion": "Sesiones de rehabilitación y terapia acuática para perros con problemas de movilidad.",
+      "tipo_animal": "Perro",
+      "tipo_anuncio": "Servicio",
+      "precio": 60.00,
+      "img": "https://example.com/terapia-acuatica.jpg"
+    },
+    {
+      "id": 16,
+      "nombre": "Guardería para Gatos",
+      "descripcion": "Guardería diurna para gatos, incluye comida, juegos y monitoreo constante.",
+      "tipo_animal": "Gato",
+      "tipo_anuncio": "Servicio",
+      "precio": 25.00,
+      "img": "https://example.com/guarderia-gatos.jpg"
+    },
+    {
+      "id": 17,
+      "nombre": "Entrenamiento de Obediencia Canina",
+      "descripcion": "Entrenamiento básico de obediencia para perros, enfocado en comandos como sentarse, quedarse y caminar con correa.",
+      "tipo_animal": "Perro",
+      "tipo_anuncio": "Servicio",
+      "precio": 45.00,
+      "img": "https://example.com/entrenamiento-obediencia.jpg"
+    },
+    {
+      "id": 18,
+      "nombre": "Corte de Uñas para Gatos",
+      "descripcion": "Servicio rápido y profesional de corte de uñas para gatos.",
+      "tipo_animal": "Gato",
+      "tipo_anuncio": "Servicio",
+      "precio": 10.00,
+      "img": "https://example.com/corte-unas-gatos.jpg"
+    },
+    {
+      "id": 19,
+      "nombre": "Acuario Mantenimiento",
+      "descripcion": "Servicio completo de limpieza y mantenimiento de acuarios en casa.",
+      "tipo_animal": "Pez",
+      "tipo_anuncio": "Servicio",
+      "precio": 40.00,
+      "img": "https://example.com/mantenimiento-acuario.jpg"
+    },
+    {
+      "id": 20,
+      "nombre": "Hospedaje para Perros",
+      "descripcion": "Servicio de hospedaje para perros en instalaciones con espacios al aire libre y vigilancia las 24 horas.",
+      "tipo_animal": "Perro",
+      "tipo_anuncio": "Servicio",
+      "precio": 80.00 ,
+      "img": "https://example.com/hospedaje-perros.jpg"
     }
   ]
 }

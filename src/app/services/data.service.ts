@@ -1,33 +1,27 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
-import { environments } from '../../environments/environments.prod';
+import { HttpClient } from '@angular/common/http';  // Asegúrate de importar HttpClient
+import { catchError, Observable, of } from 'rxjs';
+import { Anuncio } from '../interfaces/anuncio.interfaces';  // Asegúrate de tener esta interfaz
+import { environments } from '../../environments/environments';  // Revisa que esta ruta sea válida
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  private baseUrl: string = environments.baseUrl;  // Usa la URL del entorno
+  private baseUrl: string = environments.baseUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}  // HttpClient está siendo inyectado aquí
 
-  // Obtén todos los elementos desde el archivo JSON
-  getItems(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/items.json`);  // Cambia la URL si es necesario
+  getAnuncios(): Observable<Anuncio[]> {
+    return this.http.get<Anuncio[]>(`${this.baseUrl}/anuncios`);
   }
 
-  // Obtén solo productos
-  getProductos(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/items.json`).pipe(
-      map(items => items.filter(item => item.tipo === 'producto'))
-    );
-  }
 
-  // Obtén solo servicios
-  getServicios(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/items.json`).pipe(
-      map(items => items.filter(item => item.tipo === 'servicio'))
-    );
+  getAnuncioById( id: string ): Observable<Anuncio|undefined> {
+    return this.http.get<Anuncio>(`${ this.baseUrl }/anuncios/${ id }`)
+      .pipe(
+        catchError( error => of(undefined) )
+      );
   }
 }
