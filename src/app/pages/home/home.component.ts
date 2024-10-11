@@ -1,31 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from "../../components/card/card.component";
-import { MatDivider } from '@angular/material/divider';
-import { Producto } from '../../interface/producto.interface';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [
-    CommonModule,
-    CardComponent,
-    MatDivider
-  ],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css'],
+  providers: [DataService],
 })
 
 
 export class HomeComponent {
-  producto: Producto[] = [];
+  items: any[] = [];
 
-  constructor(private dataService: DataService) { }
-
-  ngOnInit(): void {
-    this.dataService.getProductos()
-      .subscribe( producto => this.producto = producto );
+  constructor(private dataService: DataService) {
+    this.items = this.dataService.getItems();  // Obtener todos los items (productos y servicios)
   }
 }

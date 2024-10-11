@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../services/data.service';
-import { Producto } from '../../interface/producto.interface';
 
 @Component({
   selector: 'app-product',
@@ -11,16 +10,9 @@ import { Producto } from '../../interface/producto.interface';
   styleUrl: './product.component.css'
 })
 export class ProductComponent {
-  productos: Producto[] = [];
+  productos: any[] = [];
 
-
-
-  producto: Producto[] = [];
-
-  constructor(private dataService: DataService) { }
-
-  ngOnInit(): void {
-    this.dataService.getProductos()
-      .subscribe( producto => this.producto = producto );
+  constructor(private dataService: DataService) {
+    this.productos = this.dataService.getProductos();  // Obtener solo productos
   }
 }

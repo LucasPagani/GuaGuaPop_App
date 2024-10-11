@@ -1,23 +1,29 @@
 import { Injectable } from '@angular/core';
-import { Producto } from '../interface/producto.interface';
-import { HttpClient } from '@angular/common/http';
-import { environments } from '../../environments/environments.prod';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
+  private items = [
+    { id: 1, name: 'Producto 1', tipo: 'producto' },
+    { id: 2, name: 'Producto 2', tipo: 'producto' },
+    { id: 3, name: 'Servicio 1', tipo: 'servicio' },
+    { id: 4, name: 'Servicio 2', tipo: 'servicio' }
+  ];
 
-  private baseUrl: string = environments.baseUrl;
+  constructor() { }
 
+  getItems(): any[] {
+    return this.items;
+  }
 
-  constructor(private http: HttpClient) { }
+  getProductos(): any[] {
+    return this.items.filter(item => item.tipo === 'producto');
+  }
 
-
-  getProductos():Observable<Producto[]> {
-    return this.http.get<Producto[]>(`${ this.baseUrl }/productos`);
+  getServicios(): any[] {
+    return this.items.filter(item => item.tipo === 'servicio');
   }
 
 }

@@ -10,9 +10,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './serv.component.css'
 })
 export class ServComponent {
-  servicios: any[] = [];
+  // servicios: any[] = [];
 
+<<<<<<< HEAD
   constructor() {
 
   }
+=======
+  // constructor(private dataService: DataService) {
+  //   this.servicios = this.dataService.getServicios();  // Obtener solo servicios
+  // }
+>>>>>>> mi-nueva-rama
 }
