@@ -6,6 +6,8 @@ import { ProductComponent } from './pages/product/product.component';
 import { ServComponent } from './pages/serv/serv.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AnoncesComponent } from './pages/anonces/anonces.component';
+import { AnunciosComponent } from './pages/anuncios/anuncios.component'; // A
+
 
 
 
@@ -18,9 +20,10 @@ import { AnoncesComponent } from './pages/anonces/anonces.component';
        { path: '', component: HomeComponent },        // Ruta para la página de inicio
        { path: 'home', redirectTo: '', pathMatch: 'full' },  // Redirigir '/home' a la página principal
        { path:'anonces/:id', component: AnoncesComponent},
+       { path: 'anuncios/:categoria', component: AnunciosComponent },
        { path: 'about', component: AboutComponent },
-       { path: 'productos', component: ProductComponent },
-       { path: 'servicios', component: ServComponent },
+      //  { path: 'productos', component: ProductComponent },
+      //  { path: 'servicios', component: ServComponent },
        { path: 'contacto', component: ContactComponent },
      ]
    }

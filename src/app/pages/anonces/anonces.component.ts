@@ -10,6 +10,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DataService } from '../../services/data.service';
 import { switchMap } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-anonces',
@@ -21,10 +22,12 @@ import { CommonModule } from '@angular/common';
     MatListModule,
     MatGridListModule,
     MatProgressSpinnerModule,
-    CommonModule
+    CommonModule,
+    MatButtonModule
   ],
   templateUrl: './anonces.component.html',
   styleUrl: './anonces.component.css',
+  providers: [DataService],
 })
 export class AnoncesComponent implements OnInit {
   public anun?: Anuncio;
@@ -52,5 +55,11 @@ export class AnoncesComponent implements OnInit {
         },
       });
   }
+  regresar():void {
+    this.router.navigateByUrl('home')
+  }
 
+  comprar(){
+    this.router.navigateByUrl('contacto')
+}
 }

@@ -24,4 +24,11 @@ export class DataService {
         catchError( error => of(undefined) )
       );
   }
+
+  getAnunciosByCategoria(categoria: string): Observable<Anuncio[]> {
+    return this.http.get<Anuncio[]>(`${this.baseUrl}/anuncios?tipo_animal=${categoria}`).pipe(
+      catchError(error => of([])) // Devuelve un array vacío si hay un error
+    );
+  }
+
 }

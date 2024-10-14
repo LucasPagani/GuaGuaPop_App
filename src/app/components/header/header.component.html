@@ -1,11 +1,8 @@
 <header>
-  <!-- Barra superior: Logo y botones de acciones (Login y Registrar) -->
-  <mat-toolbar color="primary" class="top-bar">
-
-    <img src="src/assets/chango2.png" alt="logo">
-
+  <mat-toolbar color="primary" class="top-bar pt-3">
+    <img src="chango2.png" alt="Chango" class="logo" routerLink="/">
     <span class="spacer"></span>
-
+    <span class="spacer"></span>
 
     <button mat-button>
       Registrar
@@ -15,23 +12,20 @@
     </button>
   </mat-toolbar>
 
-  <!-- Barra inferior: Menú de navegación -->
   <mat-toolbar color="accent" class="nav-bar">
-
     <button mat-button [matMenuTriggerFor]="servicesMenu">Todos Servicios</button>
 
-    <!-- Botón desplegable de Servicios -->
     <mat-menu #servicesMenu="matMenu">
-      <button mat-menu-item routerLink="">Perro</button>
-      <button mat-menu-item routerLink="">Gato</button>
-      <button mat-menu-item routerLink="">Aves</button>
-      <button mat-menu-item routerLink="">Reptiles</button>
-      <button mat-menu-item routerLink="">Animales Exoticos</button>
-      <button mat-menu-item routerLink="">Otos animales</button>
+      <button mat-menu-item routerLink="/anuncios/perro">Perro</button>
+      <button mat-menu-item routerLink="/anuncios/gato">Gato</button>
+      <button mat-menu-item routerLink="/anuncios/aves">Aves</button>
+      <button mat-menu-item routerLink="/anuncios/reptiles">Reptiles</button>
+      <button mat-menu-item routerLink="/anuncios/exoticos">Animales Exóticos</button>
+      <button mat-menu-item routerLink="/anuncios/otros">Otros animales</button>
     </mat-menu>
 
-    <button mat-button routerLink="/productos">Productos</button>
-    <button mat-button routerLink="/servicios">Servicios</button>
+    <button mat-button routerLink="/anuncios/producto">Productos</button>
+    <button mat-button routerLink="/anuncios/servicio">Servicios</button>
     <button mat-button routerLink="/about">Acerca de nosotros</button>
     <button mat-button routerLink="/contacto">Contáctanos</button>
   </mat-toolbar>

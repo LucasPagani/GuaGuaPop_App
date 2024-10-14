@@ -4,6 +4,7 @@ import {MatCardModule} from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'productos-prod-card',
@@ -12,7 +13,8 @@ import { CommonModule } from '@angular/common';
   imports: [MatCardModule,
     MatIconModule,
     RouterModule,
-    CommonModule
+    CommonModule,
+    MatButtonModule
   ],
   styles: [
   ]
