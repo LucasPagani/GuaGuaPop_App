@@ -25,10 +25,28 @@ export class DataService {
       );
   }
 
+
   getAnunciosByCategoria(categoria: string): Observable<Anuncio[]> {
-    return this.http.get<Anuncio[]>(`${this.baseUrl}/anuncios?tipo_animal=${categoria}`).pipe(
-      catchError(error => of([])) // Devuelve un array vacío si hay un error
+    console.log('URL solicitada:', `${this.baseUrl}/anuncios?tipo_anuncio=${categoria}`);  // Verifica la URL generada
+    return this.http.get<Anuncio[]>(`${this.baseUrl}/anuncios?tipo_anuncio=${categoria}`).pipe(
+      catchError(error => {
+        console.error('Error al obtener anuncios por categoría:', error);  // Para capturar errores
+        return of([]);  // Devuelve un array vacío si hay un error
+      })
     );
   }
+
+  getAnunciosByAnimal(animal: string): Observable<Anuncio[]> {
+    console.log('URL solicitada:', `${this.baseUrl}/anuncios?tipo_animal=${animal}`);  // Imprime la URL para asegurarte
+    return this.http.get<Anuncio[]>(`${this.baseUrl}/anuncios?tipo_animal=${animal}`).pipe(
+      catchError(error => {
+        console.error('Error al obtener anuncios por tipo de animal:', error);  // Captura el error si algo sale mal
+        return of([]);  // Devuelve un array vacío si hay un error
+      })
+    );
+  }
+
+
+
 
 }

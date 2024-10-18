@@ -4,23 +4,19 @@
     <span class="spacer"></span>
     <span class="spacer"></span>
 
-    <button mat-button>
-      Registrar
-    </button>
-    <button mat-button>
-      LogIn
-    </button>
+    <button mat-button routerLink="registrar">Registrar</button>
+    <button mat-button routerLink="login">LogIn</button>
   </mat-toolbar>
 
   <mat-toolbar color="accent" class="nav-bar">
-    <button mat-button [matMenuTriggerFor]="servicesMenu">Todos Servicios</button>
+    <button mat-button [matMenuTriggerFor]="servicesMenu">Todos los Servicios</button>
 
     <mat-menu #servicesMenu="matMenu">
       <button mat-menu-item routerLink="/anuncios/perro">Perro</button>
       <button mat-menu-item routerLink="/anuncios/gato">Gato</button>
       <button mat-menu-item routerLink="/anuncios/aves">Aves</button>
       <button mat-menu-item routerLink="/anuncios/reptiles">Reptiles</button>
-      <button mat-menu-item routerLink="/anuncios/exoticos">Animales Exóticos</button>
+      <button mat-menu-item routerLink="/anuncios/exoticos">Animales exóticos</button>
       <button mat-menu-item routerLink="/anuncios/otros">Otros animales</button>
     </mat-menu>
 

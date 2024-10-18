@@ -60,6 +60,7 @@ export class AnoncesComponent implements OnInit {
   }
 
   comprar(){
-    this.router.navigateByUrl('contacto')
+    //this.router.navigateByUrl('login')// crear un condicional que si esta logeado vaya directamente a la plataforma de pago sino redirige al login
+    this.router.navigateByUrl('pago')
 }
 }

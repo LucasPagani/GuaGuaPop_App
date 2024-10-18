@@ -2,11 +2,13 @@ import { Routes } from '@angular/router';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
-import { ProductComponent } from './pages/product/product.component';
-import { ServComponent } from './pages/serv/serv.component';
+
 import { ContactComponent } from './pages/contact/contact.component';
 import { AnoncesComponent } from './pages/anonces/anonces.component';
-import { AnunciosComponent } from './pages/anuncios/anuncios.component'; // A
+import { AnunciosComponent } from './pages/anuncios/anuncios.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegistroComponent } from './auth/registro/registro.component';
+import { PagoComponent } from './components/pago/pago.component';
 
 
 
@@ -17,14 +19,16 @@ import { AnunciosComponent } from './pages/anuncios/anuncios.component'; // A
      path: '',
      component: LayoutComponent,
      children: [
-       { path: '', component: HomeComponent },        // Ruta para la página de inicio
+       { path: '', component: HomeComponent },     //pagina principal
        { path: 'home', redirectTo: '', pathMatch: 'full' },  // Redirigir '/home' a la página principal
        { path:'anonces/:id', component: AnoncesComponent},
        { path: 'anuncios/:categoria', component: AnunciosComponent },
        { path: 'about', component: AboutComponent },
-      //  { path: 'productos', component: ProductComponent },
-      //  { path: 'servicios', component: ServComponent },
        { path: 'contacto', component: ContactComponent },
+       { path: 'login', component: LoginComponent },
+       { path: 'registrar', component: RegistroComponent },
+       { path: 'pago', component: PagoComponent },
+
      ]
    }
  ];

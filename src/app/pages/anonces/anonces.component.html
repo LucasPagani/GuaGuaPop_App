@@ -28,6 +28,7 @@
       <mat-list>
         <mat-list-item>{{ anun.tipo_animal }}</mat-list-item>
         <mat-list-item>{{ anun.descripcion }}</mat-list-item>
+
         <mat-list-item>{{ anun.precio | currency:'EUR':'symbol' }}</mat-list-item>
       </mat-list>
 
@@ -45,6 +46,7 @@
           mat-flat-button
           color="primary"
           (click)="comprar()"
+
         >
           Comprar
         </button>

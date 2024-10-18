@@ -91,94 +91,121 @@
       "img": "https://example.com/filtro-acuario.jpg"
     },
     {
-      "id": 11,
-      "nombre": "Paseo de Perros",
-      "descripcion": "Servicio de paseo para perros con duración de 1 hora, incluye recogida y devolución a domicilio.",
-      "tipo_animal": "Perro",
-      "tipo_anuncio": "Servicio",
-      "precio": 15.00,
-      "img": "https://example.com/paseo-perros.jpg"
+      "id": 21,
+      "nombre": "Jaula para Aves Pequeñas",
+      "descripcion": "Jaula espaciosa para canarios y otras aves pequeñas.",
+      "tipo_animal": "Aves",
+      "tipo_anuncio": "Producto",
+      "precio": 45.99,
+      "img": "https://example.com/jaula-aves.jpg"
     },
     {
-      "id": 12,
-      "nombre": "Peluquería Canina",
-      "descripcion": "Baño, corte de pelo y limpieza de oídos para perros de todas las razas.",
-      "tipo_animal": "Perro",
-      "tipo_anuncio": "Servicio",
-      "precio": 35.00,
-      "img": "https://example.com/peluqueria-canina.jpg"
+      "id": 22,
+      "nombre": "Lámpara UV para Reptiles",
+      "descripcion": "Lámpara UV para terrarios, ideal para reptiles que necesitan calor y luz ultravioleta.",
+      "tipo_animal": "Reptiles",
+      "tipo_anuncio": "Producto",
+      "precio": 30.50,
+      "img": "https://example.com/lampara-uv-reptiles.jpg"
     },
     {
-      "id": 13,
-      "nombre": "Entrenamiento para Gatos",
-      "descripcion": "Clases personalizadas para corregir comportamientos no deseados en gatos.",
-      "tipo_animal": "Gato",
-      "tipo_anuncio": "Servicio",
-      "precio": 50.00,
-      "img": "https://example.com/entrenamiento-gatos.jpg"
+      "id": 23,
+      "nombre": "Alimento para Iguanas",
+      "descripcion": "Alimento balanceado con alto contenido de fibra para iguanas.",
+      "tipo_animal": "Reptiles",
+      "tipo_anuncio": "Producto",
+      "precio": 18.20,
+      "img": "https://example.com/alimento-iguanas.jpg"
     },
     {
-      "id": 14,
-      "nombre": "Cuidado a Domicilio para Conejos",
-      "descripcion": "Cuidado especializado para conejos a domicilio, incluye alimentación y limpieza de jaula.",
-      "tipo_animal": "Conejo",
-      "tipo_anuncio": "Servicio",
-      "precio": 20.00,
-      "img": "https://example.com/cuidado-conejos.jpg"
+      "id": 24,
+      "nombre": "Cueva para Serpientes",
+      "descripcion": "Refugio natural para serpientes, ideal para su terrario.",
+      "tipo_animal": "Reptiles",
+      "tipo_anuncio": "Producto",
+      "precio": 22.00,
+      "img": "https://example.com/cueva-serpientes.jpg"
     },
     {
-      "id": 15,
-      "nombre": "Terapia Acuática para Perros",
-      "descripcion": "Sesiones de rehabilitación y terapia acuática para perros con problemas de movilidad.",
-      "tipo_animal": "Perro",
-      "tipo_anuncio": "Servicio",
-      "precio": 60.00,
-      "img": "https://example.com/terapia-acuatica.jpg"
+      "id": 25,
+      "nombre": "Terrario para Camaleones",
+      "descripcion": "Terrario de vidrio con ventilación, perfecto para camaleones.",
+      "tipo_animal": "Reptiles",
+      "tipo_anuncio": "Producto",
+      "precio": 150.00,
+      "img": "https://example.com/terrario-camaleones.jpg"
     },
     {
-      "id": 16,
-      "nombre": "Guardería para Gatos",
-      "descripcion": "Guardería diurna para gatos, incluye comida, juegos y monitoreo constante.",
-      "tipo_animal": "Gato",
-      "tipo_anuncio": "Servicio",
-      "precio": 25.00,
-      "img": "https://example.com/guarderia-gatos.jpg"
+      "id": 26,
+      "nombre": "Alimento para Tortugas Exóticas",
+      "descripcion": "Alimento especial para tortugas de tierra y especies exóticas.",
+      "tipo_animal": "Animales Exóticos",
+      "tipo_anuncio": "Producto",
+      "precio": 12.75,
+      "img": "https://example.com/alimento-tortugas-exoticas.jpg"
     },
     {
-      "id": 17,
-      "nombre": "Entrenamiento de Obediencia Canina",
-      "descripcion": "Entrenamiento básico de obediencia para perros, enfocado en comandos como sentarse, quedarse y caminar con correa.",
-      "tipo_animal": "Perro",
-      "tipo_anuncio": "Servicio",
-      "precio": 45.00,
-      "img": "https://example.com/entrenamiento-obediencia.jpg"
+      "id": 27,
+      "nombre": "Jaula para Hurones",
+      "descripcion": "Jaula de múltiples niveles diseñada para hurones y otros mamíferos exóticos.",
+      "tipo_animal": "Animales Exóticos",
+      "tipo_anuncio": "Producto",
+      "precio": 89.99,
+      "img": "https://example.com/jaula-hurones.jpg"
     },
     {
-      "id": 18,
-      "nombre": "Corte de Uñas para Gatos",
-      "descripcion": "Servicio rápido y profesional de corte de uñas para gatos.",
-      "tipo_animal": "Gato",
-      "tipo_anuncio": "Servicio",
-      "precio": 10.00,
-      "img": "https://example.com/corte-unas-gatos.jpg"
+      "id": 28,
+      "nombre": "Escondite para Roedores Exóticos",
+      "descripcion": "Pequeño refugio natural para roedores exóticos, ideal para su bienestar.",
+      "tipo_animal": "Animales Exóticos",
+      "tipo_anuncio": "Producto",
+      "precio": 15.99,
+      "img": "https://example.com/escondite-roedores.jpg"
     },
     {
-      "id": 19,
-      "nombre": "Acuario Mantenimiento",
-      "descripcion": "Servicio completo de limpieza y mantenimiento de acuarios en casa.",
-      "tipo_animal": "Pez",
-      "tipo_anuncio": "Servicio",
-      "precio": 40.00,
-      "img": "https://example.com/mantenimiento-acuario.jpg"
+      "id": 29,
+      "nombre": "Alimento para Aves Exóticas",
+      "descripcion": "Alimento premium para especies de aves exóticas con alto contenido de nutrientes.",
+      "tipo_animal": "Animales Exóticos",
+      "tipo_anuncio": "Producto",
+      "precio": 25.50,
+      "img": "https://example.com/alimento-aves-exoticas.jpg"
     },
     {
-      "id": 20,
-      "nombre": "Hospedaje para Perros",
-      "descripcion": "Servicio de hospedaje para perros en instalaciones con espacios al aire libre y vigilancia las 24 horas.",
-      "tipo_animal": "Perro",
+      "id": 30,
+      "nombre": "Caja de Transporte para Hurones",
+      "descripcion": "Caja de transporte segura y cómoda para hurones en viajes cortos.",
+      "tipo_animal": "Animales Exóticos",
+      "tipo_anuncio": "Producto",
+      "precio": 35.20,
+      "img": "https://example.com/transporte-hurones.jpg"
+    },
+    {
+      "id": 31,
+      "nombre": "Alimento para Animales de Granja",
+      "descripcion": "Alimento completo para animales de granja como gallinas, patos y caballos miniatura.",
+      "tipo_animal": "Otros",
+      "tipo_anuncio": "Producto",
+      "precio": 28.40,
+      "img": "https://example.com/alimento-granja.jpg"
+    },
+    {
+      "id": 32,
+      "nombre": "Corte de Uñas para Conejos",
+      "descripcion": "Servicio de corte de uñas especializado para conejos y pequeños roedores.",
+      "tipo_animal": "Otros",
       "tipo_anuncio": "Servicio",
-      "precio": 80.00 ,
-      "img": "https://example.com/hospedaje-perros.jpg"
+      "precio": 12.00,
+      "img": "https://example.com/corte-unas-conejos.jpg"
+    },
+    {
+      "id": 33,
+      "nombre": "cuerno unicorno",
+      "descripcion": "cuerno magico.",
+      "tipo_animal": "Exoticos",
+      "tipo_anuncio": "Producto",
+      "precio": 12.00,
+      "img": "https://example.com/corte-unas-conejos.jpg"
     }
   ]
 }
