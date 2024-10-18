@@ -25,11 +25,11 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     MatButtonModule
   ],
-  templateUrl: './anonces.component.html',
-  styleUrl: './anonces.component.css',
+  templateUrl: './product.component.html',
+  styleUrl: './product.component.css',
   providers: [DataService],
 })
-export class AnoncesComponent implements OnInit {
+export class productComponent implements OnInit {
   public anun?: Anuncio;
 
   constructor(

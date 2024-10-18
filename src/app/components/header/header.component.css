@@ -3,21 +3,24 @@
 }
 
 .top-bar {
-  height: 64px; /* Ajusta el alto de la barra superior */
-  background-color: #aad5dc;
+  height: 104px; /* Ajusta el alto de la barra superior */
+  background-color: #a3eed1;
+
   display: flex; /* Cambiar a flexbox para centrar elementos */
   align-items: center; /* Centra verticalmente los elementos */
 }
 
 .logo {
-  width: 200px; /* Ajusta el ancho del logo según sea necesario */
+  width: 300px; /* Ajusta el ancho del logo según sea necesario */
   height: auto; /* Mantiene la proporción de la imagen */
-  margin-right: 16px; /* Espacio a la derecha del logo */
+  margin: 16px; /* Espacio a la derecha del logo */
 }
 
 .nav-bar {
   justify-content: left; /* Centra los botones del menú de navegación */
-  background-color: #aad5dc;
+  background-color: #a3eed1;
+
+
 }
 
 mat-toolbar {
@@ -26,5 +29,5 @@ mat-toolbar {
 
 button[mat-button] {
   margin: 0 10px; /* Espaciado entre los botones del menú */
-  font-size: 16px; /* Ajusta el tamaño de la fuente en los botones */
+  font-size: 20px; /* Ajusta el tamaño de la fuente en los botones */
 }
