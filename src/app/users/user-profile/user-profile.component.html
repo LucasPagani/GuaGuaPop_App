@@ -1,7 +1,8 @@
 <mat-toolbar color="primary" class="top-bar">
   <img src="chango2.png" alt="Chango" class="logo" routerLink="/">
   <span class="spacer"></span>
-  <button mat-raised-button color="accent" routerLink="/login">LogOut</button>
+  <button mat-raised-button color="accent" routerLink="/home">LogOut</button>
+  <!-- Aqui funcion para logout -->
 </mat-toolbar>
 
 <main class="container">
@@ -14,6 +15,9 @@
     <p><strong>Teléfono:</strong> +54 9 11 1234 5678</p>
 
     <button  mat-raised-button color="accent m-2">Modificar Datos</button>
+    <!-- posible opcion es que lleve al campo registro y cambiamos el boron de registrar a modificar dependiendo de donde venga -->
+    <button  mat-raised-button color="warn m-2">Baja cuenta</button>
+    <!-- con un metodo de eliminar en el typescript -->
   </div>
 
 
