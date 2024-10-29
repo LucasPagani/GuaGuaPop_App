@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { InputTextModule } from 'primeng/inputtext';
-import { PasswordModule } from 'primeng/password';
-import { ButtonModule } from 'primeng/button';
-import { PanelModule } from 'primeng/panel';
-import { CommonModule } from '@angular/common';
 
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { MATERIAL_MODULES } from '../../material/material/material.component';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,31 +12,31 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     FormsModule,
-    InputTextModule,
-    PasswordModule,
-    ButtonModule,
-    PanelModule
+
+    MATERIAL_MODULES
   ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username: string = '';
+
+  usuario: string = '';
   password: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private AuthService: AuthService, private router: Router) {}
 
-  onLogin() {
-    // Lógica de autenticación
-    console.log('Usuario:', this.username);
-    console.log('Contraseña:', this.password);
-
-    if (this.username && this.password) {
-      // Lógica para autenticación exitosa
-      this.router.navigate(['/dashboard']);
-    } else {
-      alert('Por favor ingresa tus credenciales');
-    }
+  // Método para manejar el inicio de sesión
+  onLogin(): void {
+    this.AuthService.login(this.usuario, this.password).subscribe(
+      response => {
+        // Redirigir si el login es exitoso
+        this.router.navigate(['/home']);
+      },
+      error => {
+        // Manejo de errores
+        console.error('Error en el inicio de sesión', error);
+        alert('Usuario o contraseña incorrectos');
+      }
+    );
   }
-
 }

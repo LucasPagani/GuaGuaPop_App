@@ -1,18 +1,26 @@
-<div class="contact-form text-center container ">
-  <h2>Login</h2>
-  <form id="contactForm">
+<div class="contact-form text-center container">
+  <mat-card class="form-card">
+    <h2>Inicio de Sesión</h2>
+    <form id="LoginForm" (ngSubmit)="onLogin()">
+
       <div class="form-group">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Usuario</mat-label>
+          <input matInput type="text" id="usuario" name="usuario" [(ngModel)]="usuario" required>
+        </mat-form-field>
       </div>
+
       <div class="form-group">
-          <label for="pawd">Apellido:</label>
-          <input type="password" id="pwd" name="pwd" required>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" id="password" name="password" [(ngModel)]="password" required>
+        </mat-form-field>
       </div>
 
       <div class="form-actions">
-          <button type="submit">Entrar</button>
+        <button mat-raised-button color="primary" type="submit">Entrar</button>
+        <button mat-raised-button color="warn" type="button" >Cancelar</button>
       </div>
-
-  </form>
+    </form>
+  </mat-card>
 </div>

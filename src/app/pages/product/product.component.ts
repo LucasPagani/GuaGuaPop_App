@@ -1,29 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CardComponent } from '../../components/card/card.component';
-import { MatListModule } from '@angular/material/list';
 import { Anuncio } from '../../interfaces/anuncio.interfaces';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DataService } from '../../services/data.service';
 import { switchMap } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
+import { MATERIAL_MODULES } from '../../material/material/material.component';
 
 @Component({
   selector: 'app-anonces',
   standalone: true,
   imports: [
     CardComponent,
-    MatCardModule,
-    MatDividerModule,
-    MatListModule,
-    MatGridListModule,
-    MatProgressSpinnerModule,
     CommonModule,
-    MatButtonModule
+    MATERIAL_MODULES
+
   ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',
@@ -44,13 +35,13 @@ export class productComponent implements OnInit {
       .subscribe({
         next: (anun) => {
           if (!anun) {
-            // Manejo si no encuentra el anuncio, muestra mensaje en lugar de redirigir.
+
             alert('Anuncio no encontrado');
           }
           this.anun = anun;
         },
         error: (err) => {
-          // Manejo de errores de la API
+
           console.error('Error fetching the ad', err);
         },
       });
@@ -64,3 +55,13 @@ export class productComponent implements OnInit {
     this.router.navigateByUrl('pago')
 }
 }
+
+
+// comprar() {
+//   if (this.authService.isLoggedIn()) {
+//     // Si el usuario está logeado, lo rediriges a la pasarela de pago
+//     this.router.navigateByUrl('pago');
+//   } else {
+//     // Si no está logeado, lo rediriges a la página de login
+//     this.router.navigateByUrl('login');
+//   }
