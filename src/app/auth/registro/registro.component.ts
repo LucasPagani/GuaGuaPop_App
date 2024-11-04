@@ -3,12 +3,15 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ReactiveFormsModul
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { MATERIAL_MODULES } from '../../material/material/material.component';
-
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-registro',
   standalone: true,
-  imports: [ReactiveFormsModule, MATERIAL_MODULES],
+  imports: [
+    ReactiveFormsModule,
+    MATERIAL_MODULES,
+    CommonModule],
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css'],
 })
@@ -21,19 +24,19 @@ export class RegisterComponent {
     private router: Router
   ) {
     this.registerForm = this.fb.group({
-      nombre: ['', Validators.required],
-      apellido1: ['', Validators.required],
-      apellido2: [''],
+      name: ['', Validators.required],
+      last_name1: ['', Validators.required],
+      last_name2: [''],
       email: ['', [Validators.required, Validators.email]],
-      telefono: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]], // 10 dígitos numéricos
-      direccion: ['', Validators.required],
-      ciudad: ['', Validators.required],
-      municipio: ['', Validators.required],
-      codigoPostal: ['', [Validators.required, Validators.pattern('^[0-9]{5}$')]], // 5 dígitos numéricos
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      password1: ['', Validators.required],
+      phone: ['', [Validators.required, Validators.pattern('^[0-9]{9,}$')]], // Permite al menos 9 dígitos
+      street: ['', Validators.required],
+      city: ['', Validators.required],
+      postal_code: ['', [Validators.required, Validators.pattern('^[0-9]{5}$')]],
+      password: ['', [Validators.required, Validators.minLength(8)]], // Ajustado a 8 caracteres
+      password2: ['', Validators.required],
+      username: ['', Validators.required],
     }, {
-      validator: this.matchPasswords('password', 'password1')
+      validator: this.matchPasswords('password', 'password2')
     });
   }
 
@@ -43,10 +46,19 @@ export class RegisterComponent {
       const passControl = formGroup.get(password);
       const confirmPassControl = formGroup.get(confirmPassword);
 
-      if (passControl && confirmPassControl && passControl.value !== confirmPassControl.value) {
+      if (!passControl || !confirmPassControl) {
+        return;
+      }
+
+      if (confirmPassControl.errors && !confirmPassControl.errors['mustMatch']) {
+        // Retorna si ya tiene otros errores de validación
+        return;
+      }
+
+      if (passControl.value !== confirmPassControl.value) {
         confirmPassControl.setErrors({ mustMatch: true });
       } else {
-        confirmPassControl?.setErrors(null);
+        confirmPassControl.setErrors(null); // Limpiar errores cuando coinciden
       }
     };
   }
@@ -58,14 +70,16 @@ export class RegisterComponent {
     }
 
     const userData = this.registerForm.value;
+
     this.authService.register(userData).subscribe(
       response => {
         alert('Registro exitoso');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/login']); // Redirige al inicio de sesión tras el registro, si lo implementamos antes del pago hay que redirigir a la pagina de pay
       },
       error => {
         console.error('Error en el registro', error);
-        alert('Error al registrar el usuario');
+        const errorMsg = error.error?.message || 'Error al registrar el usuario';
+        alert(errorMsg);
       }
     );
   }

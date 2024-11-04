@@ -1,46 +1,124 @@
-import { Component } from '@angular/core';
-import { MATERIAL_MODULES } from '../../material/material/material.component';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 import { DataService } from '../../services/data.service';
-import { CardComponent } from '../../components/card/card.component';
-import { RouterModule } from '@angular/router';
+import { User } from '../../interfaces/user.interface';
 import { CommonModule } from '@angular/common';
+import { MATERIAL_MODULES } from '../../material/material/material.component';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [
-    RouterModule,
-    CommonModule,
-    CardComponent,
-    MATERIAL_MODULES
-  ],
+  imports: [RouterModule, CommonModule, MATERIAL_MODULES],
   providers: [DataService],
   templateUrl: './user-profile.component.html',
-  styleUrl: './user-profile.component.css'
+  styleUrls: ['./user-profile.component.css'],
 })
-export class UserProfileComponent  {
+export class UserProfileComponent implements OnInit {
+  usuario: User | null = null; // Datos del usuario
+  anuncios: any[] = []; // Anuncios del usuario
+  selectedFile?: File; // Archivo seleccionado para la foto de perfil
+  photoPreview?: string | ArrayBuffer | null; // Vista previa de la foto
 
-  //La logica consiste en poder mostrar datos usuario y datos anuncios del usuario, modificar perfil, modificar anuncios y elminar aunucios
+  constructor(
+    private authService: AuthService,
+    private dataService: DataService,
+    private router: Router
+  ) {}
 
+  ngOnInit(): void {
 
-  constructor(private dataService: DataService) {}
+    // Cargar datos del usuario
+    /*this.authService.getCurrentUser().subscribe(
+      (user) => (this.usuario = user),
+      (error) => console.error('Error al cargar usuario:', error)
+    );*/
+    this.authService.getCurrentUser();
 
-  usuario = { //Cargar los datos del usuario
-    nombre: 'Juan Pérez',
-    email: 'juan.perez@example.com',
-    telefono: '+54 9 11 1234 5678'
-  };
-
-  modificarAnuncio(){
-
+    // Cargar anuncios del usuario
+    this.loadAnuncios();
   }
 
-  crearAnuncio() {
-    // Lógica para crear un nuevo anuncio
+  //Cargar todos los anuncios del usuario, actualmente usa data service, modificarr luego por backend
+  loadAnuncios(): void {
+
+    this.dataService.getAnuncios().subscribe(
+      (anuncios) => (this.anuncios = anuncios),
+      (error) => console.error('Error al cargar anuncios:', error)
+    );
   }
 
-  borrarAnuncio() {
-    // Lógica para borrar un anuncio
+  // Modifica datos y Redirige al formulario de registro en modo edición
+  modificarDatos(): void {
+        this.router.navigate(['/register'], { queryParams: { editMode: true } });
   }
 
+  //Elimina Cuenta
+  deleteUser(): void {
+    // Lógica para borrar usuario - dar de baja cuenta
+    this.authService.delete(this.usuario!.id_user.toString()).subscribe(
+      () => {
+        alert('Cuenta eliminada con éxito');
+        this.router.navigate(['/home']); // Redirigir al home tras eliminar
+      },
+      (error) => console.error('Error al eliminar usuario:', error)
+    );
+  }
+
+  //Cierra sesión
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']); // Redirigir al login tras logout
+  }
+
+    // Método para manejar la selección de archivo
+    onFileSelected(event: Event): void {
+      const input = event.target as HTMLInputElement;
+      if (input.files && input.files[0]) {
+        this.selectedFile = input.files[0];
+
+        // Vista previa de la imagen seleccionada
+        const reader = new FileReader();
+        reader.onload = () => {
+          this.photoPreview = reader.result;
+        };
+        reader.readAsDataURL(this.selectedFile);
+      }
+    }
+
+     // Método para subir la foto al backend
+  uploadPhoto(): void {
+    if (this.selectedFile) {
+      const formData = new FormData();
+      formData.append('photo', this.selectedFile);
+
+      // Llamada al servicio para subir la foto
+      this.authService.uploadPhoto(formData).subscribe(
+        (response) => {
+          alert('Foto subida con éxito');
+          this.usuario!.profile_photo = response.photoUrl; // Actualiza la URL de la foto del usuario
+        },
+        (error) => console.error('Error al subir la foto:', error)
+      );
+    }
+  }
+
+  // FATA POR CREAR
+
+  crearAnuncio(): void {
+    // Lógica para crear un anuncio
+    console.log('Crear anuncio');
+  }
+
+  modificarAnuncio(anuncioId: number): void {
+    // Lógica para modificar el anuncio específico
+    console.log(`Modificar anuncio ${anuncioId}`);
+  }
+
+
+eliminarAnuncio(anuncioId: number): void {
+    // Lógica para borrar el anuncio específico
+   console.log("Anuncio borrado")
+
+  }
 }
