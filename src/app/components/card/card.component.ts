@@ -1,12 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Anuncio } from '../../interfaces/anuncio.interfaces';
-
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MATERIAL_MODULES } from '../../material/material/material.component';
+import { MATERIAL_MODULES } from '../material/material.component';
+import { Ad } from '../../interfaces/anuncio.interfaces';
 
 @Component({
-  selector: 'productos-prod-card',
+  selector: 'app-card',
   templateUrl: './card.component.html',
   standalone: true,
   imports: [
@@ -14,15 +13,23 @@ import { MATERIAL_MODULES } from '../../material/material/material.component';
     CommonModule,
     RouterModule,
   ],
-  styleUrl: './card.component.css',
+  styleUrls: ['./card.component.css'],
 })
-export class CardComponent implements OnInit {
+export class CardComponent implements OnInit, OnDestroy {
   @Input()
-  public prod!: Anuncio;
+
+  ad: Ad | undefined; // Asegúrate de que la propiedad 'ad' es del tipo 'Ad'
+  imageUrl: string | undefined;
 
   ngOnInit(): void {
-    if (!this.prod) {
-      console.warn('Producto no proporcionado al componente');
+    if (this.ad && this.ad.photos && this.ad.photos.length > 0) {
+      this.imageUrl = this.ad.photos[0];  // La primera foto es una cadena base64
     }
   }
+
+ngOnDestroy(): void {
+  // Limpieza si fuera necesario
 }
+}
+
+

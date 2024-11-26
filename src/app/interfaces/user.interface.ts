@@ -1,5 +1,5 @@
 export interface User {
-  photo: string;
+
   isBlocked: any;
   id_user: number;
   city: string;
@@ -16,6 +16,7 @@ export interface User {
   profile_photo?: string | null;
   street: string;
   username: string;
+  roles: string;
 }
 
 export interface UserLogin {
@@ -26,4 +27,5 @@ export interface UserLogin {
 export interface UserSession {
   username: string;
   token: string;
+  roles: string[];
 }

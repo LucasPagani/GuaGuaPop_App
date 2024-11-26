@@ -1,13 +1,31 @@
-<h3 class="text-center container ">Todos los Productos y Servicios</h3>
-<mat-divider></mat-divider>
 
-<div class="row g-4 pt-2">
+<!-- Contenedor principal con overlay -->
+<div class="banner-container">
+  <!-- Imagen de fondo -->
+  <img src="banner6.jpg" alt="banner" class="banner">
 
-  <div *ngFor="let producto of paginatedProd" class="col-12 col-sm-6 col-md-4 col-lg-custom">
-    <productos-prod-card [prod]="producto"></productos-prod-card>
+  <!-- Overlay con texto -->
+  <div class="overlay-text ">
+   <mat-card class="vende">
+    <p class="m-3">Encuenta lo que buscas</p>
+    <button mat-raised-button class="btn mb-3" (click)="vender()">Vender</button>
+    <a href="infoVenta">¿Como funciona?</a>
+   </mat-card>
   </div>
 </div>
 
+<!-- Contenedor para los botones de ordenación -->
+<!-- <div class="text-center">
+  <button mat-button (click)="ordenarPorFecha()">Ver por Fecha</button>
+  <button mat-button (click)="ordenarAlfabeticamente()">Ordenar Alfabéticamente</button>
+</div> -->
+
+<!-- Contenedor flexbox para los productos -->
+<div class="flex-container">
+  <div *ngFor="let producto of paginatedProd" class="producto-card">
+    <app-card [ad]="producto"></app-card>
+  </div>
+</div>
 
 <mat-paginator [length]="totalLength"
                [pageSize]="pageSize"
