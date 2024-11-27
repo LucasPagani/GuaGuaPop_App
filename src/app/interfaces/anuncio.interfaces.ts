@@ -1,4 +1,5 @@
 export interface Ad {
+  createdAt: string | number | Date; // ESTA LA HE CREADO PROVISIONALMETE POR QUE NO LA HAY EN LA BBDD
   idAd: number;
   category: string;
   city: string;
@@ -9,7 +10,7 @@ export interface Ad {
   title: string;
   id_user: number;
   photos?: string[];  // Propiedad opcional para fotos
-  type?: Ad_type;
+  typeAd: string;
 }
 
 export interface Ad_photo{
