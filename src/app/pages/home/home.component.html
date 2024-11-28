@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<div class="container m-3">
+<!-- <div class="container m-3">
 <mat-menu #ordenMenu="matMenu" class="custom-menu ">
   <div style="display: flex; flex-direction: column; width: 100%;">
     <button mat-button (click)="ordenarAnuncios('fecha')">Fecha</button>
@@ -28,12 +28,12 @@
     Ordenar por <mat-icon>arrow_drop_down</mat-icon>
   </button>
 </div>
-</div>
+</div> -->
 
 <!-- Contenedor flexbox para los productos -->
 <div class="flex-container">
   <div *ngFor="let producto of paginatedProd" class="producto-card">
-    <app-card [ad]="producto"></app-card>
+    <app-card [prod]="producto"></app-card>
   </div>
 </div>
 
@@ -44,3 +44,5 @@
                (page)="onPageChange($event)"
                aria-label="Select page">
 </mat-paginator>
+
+
